@@ -48,6 +48,12 @@ Command: kafka-console-consumer.sh --topic resume_upload_topic --bootstrap-serve
 Command: stop-all.sh
 - To stop all the services.
 
+### Configure a MongoDB database
+- Begin by establishing a new account on MongoDB Atlas.
+- Proceed to generate a new cluster.
+- Develop a fresh collection within the cluster.
+- Construct a novel database, adhering to the structure outlined in the provided techtrend.techtrend_user.json or techtrend.techtrend_user_db.json files.
+
 ### Modify app.py file
 
 Add the path where you have stored your resume dataset:
