@@ -19,9 +19,9 @@ In comparing our proposed solution with current advances in job boards, it becom
 
 ## Getting Started
 
-1. Setup Hadoop, Apache Kafka and Apache Zookeeper 
+Setup Hadoop, Apache Kafka and Apache Zookeeper 
 
-- Command: start-all.sh
+Command: start-all.sh
 - The following services are initiated:
 - Data Node: Responsible for data storage within a Hadoop cluster node.
 - JPS: Java Virtual Machine Process Status Tool to facilitate the listing of Java processes.
@@ -30,39 +30,39 @@ In comparing our proposed solution with current advances in job boards, it becom
 - Name Node: Manages the file system namespace and metadata for HDFS within Hadoop.
 - Node Manager: Manages resources and containers on a node.
 
-- Command: zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+Command: zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
 - Initiates the Zookeeper server crucial for Kafka to synchronize distributed processes.
 
-- Command: kafka-server-start.sh $KAFKA_HOME/config/server.properties
+Command: kafka-server-start.sh $KAFKA_HOME/config/server.properties
 - Launches the Kafka server, following the designated properties of configuration.
 
-- Command: kafka-topics.sh --create --topic resume_upload_topic --bootstrap-server localhost:9092 -- partitions 1 --replication-factor 1
+Command: kafka-topics.sh --create --topic resume_upload_topic --bootstrap-server localhost:9092 -- partitions 1 --replication-factor 1
 - Establishes a "resume_upload_topic" Kafka topic with specified replication factor and configuration parameters.
 
-- Command: kafka-console-producer.sh --topic resume_upload_topic --bootstrap-server localhost:9092
+Command: kafka-console-producer.sh --topic resume_upload_topic --bootstrap-server localhost:9092
 - Initiates a console-based producer, allowing messages to be published to the Kafka topic "resume_upload_topic".
 
-- Command: kafka-console-consumer.sh --topic resume_upload_topic --bootstrap-server localhost:9092 -- from-beginning
+Command: kafka-console-consumer.sh --topic resume_upload_topic --bootstrap-server localhost:9092 -- from-beginning
 - Starts a consumer that makes it easier to retrieve messages from the "resume_upload_topic" Kafka topic right from the start.
 
-- Command: stop-all.sh
+Command: stop-all.sh
 - To stop all the services.
 
-2. Modify app.py file
+Modify app.py file
 
-- Add the path where you have stored your resume dataset:
+Add the path where you have stored your resume dataset:
 - resumeDataSet = pd.read_csv('/Users/tejaasmukundareddy/Documents/Final_Project/UpdatedResumeDataSet.csv', encoding='utf-8')
 
-- Add the path to your clf_model.pkl:
+Add the path to your clf_model.pkl:
 - clf = joblib.load('/Users/tejaasmukundareddy/Documents/Final_Project/clf_model.pkl')
 
-- Add the path to the random resume:
+Add the path to the random resume:
 - uploaded_pdf_file = '/Users/tejaasmukundareddy/Documents/Home/Tejaas_Mukunda_Reddy.pdf'
 
-- Modify the URL with your userid and password for the MongoDB database:
+Modify the URL with your userid and password for the MongoDB database:
 - atlas_uri = "mongodb+srv://userid:password&key/?retryWrites=true&w=majority&ssl_ca_certs=/path/to/cafile.pem"
 
-- Add the correct path:
+Add the correct path:
 - path = '/Users/tejaasmukundareddy/Documents/Final_Project/'
 - path = '/Users/tejaasmukundareddy/Documents/Final_Project/'
 
