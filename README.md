@@ -52,7 +52,7 @@ Command: stop-all.sh
 - Begin by establishing a new account on MongoDB Atlas.
 - Proceed to generate a new cluster.
 - Develop a fresh collection within the cluster.
-- Construct a novel database, adhering to the structure outlined in the provided techtrend.techtrend_user.json or techtrend.techtrend_user_db.json files.
+- Construct a database outlined in the provided techtrend.techtrend_user.json or techtrend.techtrend_user_db.json files.
 
 ### Modify app.py file
 
