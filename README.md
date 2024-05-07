@@ -1,18 +1,26 @@
-#TechTrend - Streamlining Job Search 
-
-In comparing our proposed solution with current advances in job boards, it becomes evident that traditional platforms have inherent limitations. The conventional model relies on job seekers to proactively identify and acquire the skills demanded by employers and apply for each jobs individually, resulting in a time-consuming and often inefficient process. The persistence of fraudulent job postings and the inability to ensure real-time accuracy in the job listings further amplify the challenges faced by both candidates and recruiters.
-My proposed solution acknowledges these limitations and aims to usher in a paradigm shift by addressing the root causes of inefficiencies in the current system.
+# TechTrend - Streamlining Job Search 
 
 Please review the Final Project Report CPSC 597.pdf or Final Project Report CPSC 597.docx to know more about the project and architecture
 
-Steps to run the project
+## About the Project
 
-To establish the Hadoop cluster and activate Apache Kafka for data ingestion, as well as Apache Zookeeper for resource management, follow these commands.
+In comparing our proposed solution with current advances in job boards, it becomes evident that traditional platforms have inherent limitations. The conventional model relies on job seekers to proactively identify and acquire the skills demanded by employers and apply for each jobs individually, resulting in a time-consuming and often inefficient process. The persistence of fraudulent job postings and the inability to ensure real-time accuracy in the job listings further amplify the challenges faced by both candidates and recruiters. My proposed solution acknowledges these limitations and aims to usher in a paradigm shift by addressing the root causes of inefficiencies in the current system.
 
-1. Install Angular, Flask, Hadoop and Setup MongoDB database in the techtrend.techtrend_user.json or echtrend.techtrend_user_db.json format.
+### Built With
 
-2. Hadoop Setup
-Install Hadoop, Apache Kafka and A
+- Angular
+- Flask
+- Hadoop
+- MongoDB database 
+- Python
+- Beautiful Soup
+- scikit-learn
+- Colab
+
+## Getting Started
+
+1. Setup Hadoop, Apache Kafka and Apache Zookeeper 
+
 # start-all.sh
 The following services are initiated:
 • Data Node: Responsible for data storage within a Hadoop cluster node.
@@ -40,82 +48,66 @@ Starts a consumer that makes it easier to retrieve messages from the "resume_upl
 # stop-all.sh
 To stop all the services.
 
-3. Changes in File
+2. Modify app.py file
 
-In app.py modify the following lines 
-
-Add the path where you have stored your
+Add the path where you have stored your resume dataset:
 resumeDataSet = pd.read_csv('/Users/tejaasmukundareddy/Documents/Final_Project/UpdatedResumeDataSet.csv', encoding='utf-8')
 
-Add the path to your clf_model.pkl
+Add the path to your clf_model.pkl:
 clf = joblib.load('/Users/tejaasmukundareddy/Documents/Final_Project/clf_model.pkl')
 
-Add the random resume  
+Add the path to the random resume:
 uploaded_pdf_file = '/Users/tejaasmukundareddy/Documents/Home/Tejaas_Mukunda_Reddy.pdf'
 
-Modify the url with your userid and password for mongodb database
+Modify the URL with your userid and password for the MongoDB database:
 atlas_uri = "mongodb+srv://userid:password&key/?retryWrites=true&w=majority&ssl_ca_certs=/path/to/cafile.pem"
 
-Add the correct path
+Add the correct path:
 path = '/Users/tejaasmukundareddy/Documents/Final_Project/'
 path = '/Users/tejaasmukundareddy/Documents/Final_Project/'
-
-
-
-# Project Title
-
-Brief description or overview of the project.
-
-## Table of Contents
-
-- [Project Title](#project-title)
-- [About the Project](#about-the-project)
-  - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
-## About the Project
-
-Explain in more detail what the project is about, its objectives, and its features.
-
-### Built With
-
-List the technologies/frameworks/languages used in the project.
-
-- Technology/Framework/Language 1
-- Technology/Framework/Language 2
-- ...
-
-## Getting Started
-
-Provide instructions on how to get the project up and running on the local machine.
 
 ### Prerequisites
 
-List any software, libraries, or dependencies needed before starting.
-
-### Installation
-
-Step-by-step guide on how to install/setup the project.
+- Angular
+- Flask
+- Hadoop
+- Python - Environment with all dependencies for specified libraries
+- Visual Studio Code
+- MongoDB database
+- Apache Kafka
+- Apache ZooKeeper
 
 ## Usage
 
-Provide examples or instructions on how to use the project.
+- Step 1 Download all the files or clone the repository
+- Step 2 Follow the above steps for Hadoop, Apache Kafka and Apache Zookeeper setup and start all the services
+- Step 3 Complete the setup for MongoDB atlas
+- Step 4 Move to website folder and run # ng serve --open command and this will open up the website
+- Step 5 Run the app.py code in dedicated terminal
+- Step 6 Run the consumer.py code in dedicated terminal
 
-## Contributing
+Once you finish the preceding steps, you should be capable of executing the following operations.
 
-Guidelines for contributing to the project, including information on how to submit bug reports, feature requests, or pull requests.
+From Candidate/User Perspective
+● The User visits the Tech Trend Home Page and logs in.
+● TechTrend fetches the current trending technologies data from the job board using web scraping.
+● TechTrend returns the current trending technologies data to the User.
+● The Users upload their resumes to Tech Trend application.
+● TechTrend analyzes the User's resume and displays Domain and ranking.
+● The Users express interest in a company.
+● TechTrend saves the User's company selection.
+● TechTrend notifies the company's recruiters.
+● The Users upload their certification to Tech Trend.
+● TechTrend validates the certification.
+● TechTrend saves the certification.
+● The User emails a recruiter.
 
-## License
+From Recruiter Perspective
+● The Recruiter visits their Recruiter Page and logs in.
+● TechTrend displays candidate profiles to the Recruiter.
+● The Recruiter filters candidates by domain.
+● The Recruiter filters the candidates based on ranking.
+● TechTrend applies the filter and displays the candidates to the Recruiter.
+● The Recruiter selects a candidate and TechTrend displays the email of the candidate.
+● The Recruiter emails the candidate.
 
-Information about the project's license.
-
-## Contact
-
-- [Author Name](author@example.com)
-- Project Link: [Project Name](https://github.com/username/project-name)
