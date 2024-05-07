@@ -79,12 +79,12 @@ In comparing our proposed solution with current advances in job boards, it becom
 
 ## Usage
 
-- Step 1 Download all the files or clone the repository
-- Step 2 Follow the above steps for Hadoop, Apache Kafka and Apache Zookeeper setup and start all the services
-- Step 3 Complete the setup for MongoDB atlas
-- Step 4 Move to website folder and run # ng serve --open command and this will open up the website
-- Step 5 Run the app.py code in dedicated terminal
-- Step 6 Run the consumer.py code in dedicated terminal
+- Step 1: Download all the files or clone the repository
+- Step 2: Follow the above steps for Hadoop, Apache Kafka and Apache Zookeeper setup and start all the services
+- Step 3: Complete the setup for MongoDB atlas
+- Step 4: Move to website folder and run # ng serve --open command and this will open up the website
+- Step 5: Run the app.py code in dedicated terminal
+- Step 6: Run the consumer.py code in dedicated terminal
 
 Once you finish the preceding steps, you should be capable of executing the following operations.
 
