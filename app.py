@@ -159,7 +159,7 @@ print("Feature Vector:")
 print(feature_vector1)
 
 # MongoDB Atlas connection string
-atlas_uri = "mongodb+srv://tejasmukunda:whemAV0rpMAFkuho@cluster0.aptdng7.mongodb.net/?retryWrites=true&w=majority&ssl_ca_certs=/path/to/cafile.pem"
+atlas_uri = "mongodb+srv://userid:password&key/?retryWrites=true&w=majority&ssl_ca_certs=/path/to/cafile.pem"
 
 # Connect to the MongoDB Atlas Cluster
 client = MongoClient(atlas_uri)
