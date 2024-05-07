@@ -21,7 +21,7 @@ In comparing our proposed solution with current advances in job boards, it becom
 
 1. Setup Hadoop, Apache Kafka and Apache Zookeeper 
 
-# start-all.sh
+start-all.sh
 The following services are initiated:
 • Data Node: Responsible for data storage within a Hadoop cluster node.
 • JPS: Java Virtual Machine Process Status Tool to facilitate the listing of Java processes.
@@ -30,22 +30,22 @@ The following services are initiated:
 • Name Node: Manages the file system namespace and metadata for HDFS within Hadoop.
 • Node Manager: Manages resources and containers on a node.
 
-# zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
 Initiates the Zookeeper server crucial for Kafka to synchronize distributed processes.
 
-# kafka-server-start.sh $KAFKA_HOME/config/server.properties
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
 Launches the Kafka server, following the designated properties of configuration.
 
-# kafka-topics.sh --create --topic resume_upload_topic --bootstrap-server localhost:9092 -- partitions 1 --replication-factor 1
+kafka-topics.sh --create --topic resume_upload_topic --bootstrap-server localhost:9092 -- partitions 1 --replication-factor 1
 Establishes a "resume_upload_topic" Kafka topic with specified replication factor and configuration parameters.
 
-# kafka-console-producer.sh --topic resume_upload_topic --bootstrap-server localhost:9092
+kafka-console-producer.sh --topic resume_upload_topic --bootstrap-server localhost:9092
 Initiates a console-based producer, allowing messages to be published to the Kafka topic "resume_upload_topic".
 
-# kafka-console-consumer.sh --topic resume_upload_topic --bootstrap-server localhost:9092 -- from-beginning
+kafka-console-consumer.sh --topic resume_upload_topic --bootstrap-server localhost:9092 -- from-beginning
 Starts a consumer that makes it easier to retrieve messages from the "resume_upload_topic" Kafka topic right from the start.
 
-# stop-all.sh
+stop-all.sh
 To stop all the services.
 
 2. Modify app.py file
