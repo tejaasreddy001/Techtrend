@@ -48,7 +48,7 @@ Command: kafka-console-consumer.sh --topic resume_upload_topic --bootstrap-serve
 Command: stop-all.sh
 - To stop all the services.
 
-Modify app.py file
+# Modify app.py file
 
 Add the path where you have stored your resume dataset:
 - resumeDataSet = pd.read_csv('/Users/tejaasmukundareddy/Documents/Final_Project/UpdatedResumeDataSet.csv', encoding='utf-8')
