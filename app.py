@@ -52,7 +52,7 @@ nltk.download('punkt')
 domain = {"0":'Advocate',"1":'Arts',"2":'Automation Testing',"3":'Blockchain',"4":'Business Analyst',"5":'Civil Engineer',"6":'Data Science',"7":'Database',"8":'Devops Engineer',"9":'Dotnet',"10":'ETL Developer',"11":'Electrical_Engineering',"12":'HR',"13":'Hadoop',"14":'Health Fitness',"15":'Java Developer',"16":'Mechanical Engineer',"17":'Network Engineer',"18":'Operations Manager',"19":'PMO',"20":'Python Developer',"21":'SAP Developer',"22":'Sales',"23":'Testing',"24":'Web Designing',"25":"None"}
 
 # Read the resume dataset
-resumeDataSet = pd.read_csv('/Users/tejaasmukundareddy/Documents/Final_Project/UpdatedResumeDataSet.csv', encoding='utf-8')
+resumeDataSet = pd.read_csv('.../UpdatedResumeDataSet.csv', encoding='utf-8')
 resumeDataSet['cleaned_resume'] = ''
 
 # Clean resume text
@@ -108,7 +108,7 @@ X_train, X_test, y_train, y_test = train_test_split(WordFeatures, requiredTarget
                                                     shuffle=True, stratify=requiredTarget)
 
 # Load the trained model
-clf = joblib.load('/Users/tejaasmukundareddy/Documents/Final_Project/clf_model.pkl')
+clf = joblib.load('.../clf_model.pkl')
 
 # Function to preprocess the uploaded resume (for PDF files)
 def preprocess_uploaded_pdf(uploaded_file):
@@ -145,7 +145,7 @@ def predict_category_and_feature_vector(model, vectorizer, uploaded_resume):
     feature_vector = resume_features.toarray()[0]
     return predicted_category, confidence_score, feature_vector
 
-uploaded_pdf_file = '/Users/tejaasmukundareddy/Documents/Home/Tejaas_Mukunda_Reddy.pdf'
+uploaded_pdf_file = '.pdf'
 
 # Preprocess the uploaded PDF resume
 cleaned_uploaded_resume = preprocess_uploaded_pdf(uploaded_pdf_file)
@@ -486,7 +486,7 @@ def upload_resume():
             # This dictionary will store the domain with assicuated category value
             cat = {0: 'Advocate', 1: 'Arts', 2: 'Automation_Testing', 3: 'Blockchain', 4: 'Business_Analyst', 5: 'Civil_Engineer', 6: 'Data_Science', 7: 'Database', 8: 'Devops_Engineer', 9: 'Dotnet', 10: 'ETLDeveloper', 11: 'Electrical_Engineering', 12: 'HR', 13: 'Hadoop', 14: 'HealthFitness', 15: 'JavaDeveloper', 16: 'MechanicalEngineer', 17: 'NetworkEngineer', 18: 'Operations_Manager', 19: 'PMO', 20: 'PythonDeveloper', 21: 'SAPDeveloper', 22: 'Sales', 23: 'Testing', 24: 'WebDesigning'}
             # This path will have target resume for each domain stored
-            path = '/Users/tejaasmukundareddy/Documents/Final_Project/'
+            path = '.../Final_Project/'
             pdf_content = preprocess_uploaded_pdf(file)
             predicted_category, confidence_score, feature_vector = predict_category_and_feature_vector(clf, word_vectorizer, pdf_content)
             target_content = preprocess_uploaded_pdf(path+cat[int(predicted_category)]+'.pdf')
@@ -555,7 +555,7 @@ def upload_certificate():
             # This dictionary will store the domain with assicuated category value
             cat = {0: 'Advocate', 1: 'Arts', 2: 'Automation_Testing', 3: 'Blockchain', 4: 'Business_Analyst', 5: 'Civil_Engineer', 6: 'Data_Science', 7: 'Database', 8: 'Devops_Engineer', 9: 'Dotnet', 10: 'ETLDeveloper', 11: 'Electrical_Engineering', 12: 'HR', 13: 'Hadoop', 14: 'HealthFitness', 15: 'JavaDeveloper', 16: 'MechanicalEngineer', 17: 'NetworkEngineer', 18: 'Operations_Manager', 19: 'PMO', 20: 'PythonDeveloper', 21: 'SAPDeveloper', 22: 'Sales', 23: 'Testing', 24: 'WebDesigning'}
             # This path will have target resume for each domain stored
-            path = '/Users/tejaasmukundareddy/Documents/Final_Project/'
+            path = '.../Final_Project/'
             pdf_content = preprocess_uploaded_pdf(file)
             predicted_category, confidence_score, feature_vector = predict_category_and_feature_vector(clf, word_vectorizer, pdf_content)
             target_content = preprocess_uploaded_pdf(path+cat[int(predicted_category)]+'.pdf')
