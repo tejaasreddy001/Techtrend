@@ -11,7 +11,7 @@ consumer = Consumer(consumer_conf)
 # Subscribing the kafka consumer topic
 consumer.subscribe(['resume_upload_topic'])
 # Initialize HDFS client
-hdfs_client = InsecureClient('http://localhost:9870', user='tejaasmukundareddy')
+hdfs_client = InsecureClient('http://localhost:9870', user='username')
 try:
     while True:
         msg = consumer.poll(1.0) 
