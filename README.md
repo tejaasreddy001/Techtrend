@@ -72,6 +72,14 @@ Add the correct path:
 - path = '/Users/tejaasmukundareddy/Documents/Final_Project/'
 - path = '/Users/tejaasmukundareddy/Documents/Final_Project/'
 
+### Modify consumer.py
+
+Add your username
+- hdfs_client = InsecureClient('http://localhost:9870',user='username')
+
+Add the correct path for your HDFS folder and save it in 
+- hdfs_existing_path variable
+
 ### Prerequisites
 
 - Angular
