@@ -60,17 +60,16 @@ Add the path where you have stored your resume dataset:
 - resumeDataSet = pd.read_csv('/Users/tejaasmukundareddy/Documents/Final_Project/UpdatedResumeDataSet.csv', encoding='utf-8')
 
 Add the path to your clf_model.pkl:
-- clf = joblib.load('/Users/tejaasmukundareddy/Documents/Final_Project/clf_model.pkl')
+- clf = joblib.load('.../clf_model.pkl')
 
 Add the path to the random resume:
-- uploaded_pdf_file = '/Users/tejaasmukundareddy/Documents/Home/Tejaas_Mukunda_Reddy.pdf'
+- uploaded_pdf_file = '.../Tejaas_Mukunda_Reddy.pdf'
 
 Modify the URL with your userid and password for the MongoDB database:
 - atlas_uri = "mongodb+srv://userid:password&key/?retryWrites=true&w=majority&ssl_ca_certs=/path/to/cafile.pem"
 
 Add the correct path:
-- path = '/Users/tejaasmukundareddy/Documents/Final_Project/'
-- path = '/Users/tejaasmukundareddy/Documents/Final_Project/'
+- path = '.../Final_Project/'
 
 ### Modify consumer.py
 
